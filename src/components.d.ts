@@ -6,56 +6,95 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface CartItem {
+        "name": string;
+        "price": number;
+        "qty": number;
+        "size": string;
+        "skuId": string;
+        "thumbnail": string;
+    }
+    interface CartList {
+        "cartItems": string;
+    }
+    interface ItemPrice {
+        "minimal": boolean;
+        "totalPrice": string;
+        "unitPrice": string;
+    }
+    interface ItemQty {
+        "qty": number;
+        "readonly": boolean;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLCartItemElement extends Components.CartItem, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLCartItemElement: {
+        prototype: HTMLCartItemElement;
+        new (): HTMLCartItemElement;
+    };
+    interface HTMLCartListElement extends Components.CartList, HTMLStencilElement {
+    }
+    var HTMLCartListElement: {
+        prototype: HTMLCartListElement;
+        new (): HTMLCartListElement;
+    };
+    interface HTMLItemPriceElement extends Components.ItemPrice, HTMLStencilElement {
+    }
+    var HTMLItemPriceElement: {
+        prototype: HTMLItemPriceElement;
+        new (): HTMLItemPriceElement;
+    };
+    interface HTMLItemQtyElement extends Components.ItemQty, HTMLStencilElement {
+    }
+    var HTMLItemQtyElement: {
+        prototype: HTMLItemQtyElement;
+        new (): HTMLItemQtyElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "cart-item": HTMLCartItemElement;
+        "cart-list": HTMLCartListElement;
+        "item-price": HTMLItemPriceElement;
+        "item-qty": HTMLItemQtyElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface CartItem {
+        "name"?: string;
+        "price"?: number;
+        "qty"?: number;
+        "size"?: string;
+        "skuId"?: string;
+        "thumbnail"?: string;
+    }
+    interface CartList {
+        "cartItems"?: string;
+    }
+    interface ItemPrice {
+        "minimal"?: boolean;
+        "totalPrice"?: string;
+        "unitPrice"?: string;
+    }
+    interface ItemQty {
+        "qty"?: number;
+        "readonly"?: boolean;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "cart-item": CartItem;
+        "cart-list": CartList;
+        "item-price": ItemPrice;
+        "item-qty": ItemQty;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "cart-item": LocalJSX.CartItem & JSXBase.HTMLAttributes<HTMLCartItemElement>;
+            "cart-list": LocalJSX.CartList & JSXBase.HTMLAttributes<HTMLCartListElement>;
+            "item-price": LocalJSX.ItemPrice & JSXBase.HTMLAttributes<HTMLItemPriceElement>;
+            "item-qty": LocalJSX.ItemQty & JSXBase.HTMLAttributes<HTMLItemQtyElement>;
         }
     }
 }

@@ -20,6 +20,7 @@
   ],
   "scripts": {
     "build": "stencil build --docs",
+    "build:vulcan": "npm run build && cp -rf www/build/* /root/dev/work/STARDUST/vulcan/apps/tenant_web/priv/static/assets/f/web-components/",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
@@ -33,7 +34,10 @@
     "@types/node": "^16.18.11",
     "jest": "^27.5.1",
     "jest-cli": "^27.5.1",
-    "puppeteer": "^19.5.2"
+    "puppeteer": "^19.5.2",
+    "stencil-tailwind-plugin": "^1.7.0",
+    "tailwindcss": "^3.3.1",
+    "typescript": "^5.0.4"
   },
   "license": "MIT"
 }

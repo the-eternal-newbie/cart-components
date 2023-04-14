@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
 
-    <script type="module" src="/build/cart-components.esm.js"></script>
-    <script nomodule src="/build/cart-components.js"></script>
-  </head>
-  <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/cart-components.esm.js"></script>
+  <script nomodule src="/build/cart-components.js"></script>
+</head>
+
+<body>
+  <cart-item sku-id="SKU151029" qty=2 price=40 size="15ml" name="Intral Inner Youth Sérum Essentiel"
+    thumbnail="https://www.darphin.fr/media/images/products/360x360/da_sku_DCKJ01_151029_360x360_0.jpg"></cart-item>
+  <cart-item sku-id="SKU151029" qty=1 price=265 size="15ml" name="STIMULSKIN PLUS - SÉRUM RÉGÉNÉRANT ABSOLU"
+    thumbnail="https://www.darphin.fr/media/images/products/360x360/da_sku_DAK001_131132_360x360_0.jpg"></cart-item>
+  <cart-item sku-id="SKU151029" qty=3 price=49 size="15ml" name="HYDRASKIN LIGHT - GEL CRÈME HYDRATATION CONTINUE"
+    thumbnail="https://www.darphin.fr/media/images/products/540x540/da_sku_DC6601_135484_540x540_0.jpg"></cart-item>
+</body>
+
 </html>

@@ -1,7 +1,12 @@
 import { Config } from '@stencil/core';
+import tailwind, { tailwindHMR } from 'stencil-tailwind-plugin';
 
 export const config: Config = {
   namespace: 'cart-components',
+  plugins: [tailwind(), tailwindHMR()],
+  devServer: {
+    reloadStrategy: 'pageReload'
+  },
   outputTargets: [
     {
       type: 'dist',
